@@ -1,0 +1,11 @@
+.nav-link{
+    background-color: blue;
+    color: azure;
+    text-decoration: none;
+    margin: 10px;
+    box-shadow: 0 5px 15px black;
+}
+.nav-link:hover{
+    background-color: blueviolet;
+    box-shadow: 0 0 5px black;
+}
