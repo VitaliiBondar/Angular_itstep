@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hello React!!!';
-  name = 'Bill';  
+  name = 'Bill';
+  name2 = 'Bill';
+  showModel(name){
+    console.log('okk');
+    this.name2= this.name;
+  }  
 }

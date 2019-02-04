@@ -1,0 +1,17 @@
+<div class="container fot">
+  <!-- <p>
+     {{name}} works! <br>
+    online : {{online}} <br>
+    {{getSiteName()}}
+  </p> -->
+  <button [disabled]="!btnStatus" [class]="className" (click)="go()">
+    Start
+  </button><br>
+  <span>
+    {{msg}}
+  </span> <br>
+  <input type="text" class="form-control" (input)="restart($event)">
+  <span>{{rocketName}}</span> <br>
+  <button (click)="takeData()">Save</button> <br>
+  <span>{{msg2}}</span>
+</div>

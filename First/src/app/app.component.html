@@ -1,13 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-head>     
-  </app-head>
+</app-head>
   <div style="text-align:center">
   <h1 class="title">      
    {{ title }}
   </h1>  
-  <input type="text" [(ngModel)]='name'>
+  <input type="text" [(ngModel)]='name' (click)="showModel(name)">
   <p>{{name}}</p> 
+  <p>{{name2}}</p> 
 </div>
-<app-main>
-    
+<app-main>    
 </app-main>
+<app-footer></app-footer>
