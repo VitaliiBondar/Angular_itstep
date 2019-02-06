@@ -1,4 +1,4 @@
-<div class="container fot">
+<div class="container fot" [ngStyle]="{backgroundColor:getTime()}"> 
   <!-- <p>
      {{name}} works! <br>
     online : {{online}} <br>
@@ -13,5 +13,15 @@
   <input type="text" class="form-control" (input)="restart($event)">
   <span>{{rocketName}}</span> <br>
   <button (click)="takeData()">Save</button> <br>
-  <span>{{msg2}}</span>
+  <span>{{msg2}}</span> <br>  
+  <!-- <p *ngIf="btnPressed; else BTNELSE">Rocket Status:{{rocketStatus}}</p>
+  <ng-template #BTNELSE>
+    <p>some text</p>
+  </ng-template> -->
+  <p [ngStyle]="{backgroundColor:getColor()}">Rocket Status:{{rocketStatus}}</p>
+  <!-- <p [ngClass]="{success : rocketStatus==='success'}">Rocket second Status:{{rocketStatus}}</p>  
+  <p [ngClass]="{success : rocketStatus==='success'}">Rocket second Status:{{rocketStatus}}</p>  -->
+  <p [ngClass]="getClass()">Rocket Status:{{rocketStatus}}</p>
+  <p *ngFor="let item of persons">{{item}}</p>  
+  <div *ngFor="let item of persons; let index=index">{{index+1}} : {{item}}</div>
 </div>

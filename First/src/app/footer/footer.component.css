@@ -3,3 +3,11 @@
     text-align: center;
     font-size: 48px;
 }
+.success {
+    background-color: darkorange;
+    font-size: 10px;
+}
+.fail {
+    background-color: blue;
+    font-size: 100px;
+}

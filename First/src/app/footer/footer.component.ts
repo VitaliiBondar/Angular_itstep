@@ -11,13 +11,29 @@ export class FooterComponent implements OnInit {
     setTimeout(()=>{
       this.btnStatus=!this.btnStatus;
       this.msg="ready";
+      this.rocketStatus = Math.random() > 0.5 ? "success" : "fail";
     },1500);
   }
   go(){
     this.msg="rocket start";
-    this.btnStatus=!this.btnStatus;
+    // this.btnStatus=!this.btnStatus;    
+    this.btnPressed =!this.btnPressed;
+    this.rocketStatus=Math.random() > 0.5 ? "success" : "fail";
+  }
+  getColor(){
+    return this.rocketStatus === "success" ? "green" : "red";
+  }
+  getClass(){
+    return this.rocketStatus === "success" ? "success" : "fail";
+  }
+  getTime(){
+    this.dTime = new Date().getHours();
+    // console.log(this.dTime);
+    // console.log(typeof this.dTime);
+    return this.dTime < 13 ? "green" : "red";
   }
 
+  persons=['jack','john','bill'];
   restart(event:Event){
     this.rocketName = (<HTMLInputElement>event.target).value;
   }
@@ -38,5 +54,8 @@ export class FooterComponent implements OnInit {
   rocketName="";
   msg = "not ready";
   msg2="";
+  rocketStatus = "";
+  btnPressed = true;
+  dTime;
 
 }
