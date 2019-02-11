@@ -1,0 +1,7 @@
+<p>
+  <input type="text" placeholder="title" [(ngModel)]='title'/>
+  <input type="text" placeholder="post" [(ngModel)]='post'/>
+  <input type="text" placeholder="autchor" [(ngModel)]='author'/>
+  <button type="button" class="btn btn-danger" (click)="addPost()">Danger</button>
+  <app-blog-item *ngFor="let item of postArray.reverse()" [post]="item"></app-blog-item>  
+</p>
