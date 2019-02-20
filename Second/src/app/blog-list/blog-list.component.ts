@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.css']
 })
-export class BlogListComponent implements OnInit {
 
+export class BlogListComponent implements OnInit {
+  @ViewChild("BlogPostRef") BlogPostRef:ElementRef;
   constructor() { }
 
   ngOnInit() {
@@ -33,6 +34,18 @@ export class BlogListComponent implements OnInit {
     this.title = "";
     this.post = "";
     this.author = "";
+  }
+  addPostt(Blogtitle:HTMLInputElement) {
+    console.log(Blogtitle.value);
+  }
+  addPosttt(){
+    console.log(this.BlogPostRef.nativeElement.value);
+  }
+  
+  deletePost(item){
+    this.postArray.shift();
+    console.log(item.id);
+    console.log(this.postArray);
   }
 
 }

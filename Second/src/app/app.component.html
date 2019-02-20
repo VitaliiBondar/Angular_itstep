@@ -3,5 +3,22 @@
   <h1>
     Welcome to {{ title }}!
   </h1>  
+  <h2 appDhover>Hello world!</h2>
+  <p appDhover [hoverColor]="'white'"[dfb]="'purple'">Lorem ipsum dolor sit amet.</p>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of arr" (click)="onClick(item)">{{item}}</li>
+  </ul>
+  <div [ngSwitch]="active">
+    <p *ngSwitchCase="1">one</p>
+    <p *ngSwitchCase="2">two</p>
+    <p *ngSwitchCase="3">third</p>
+    <p *ngSwitchCase="4">four</p>
+    <p *ngSwitchCase="5">five</p>
+    <p *ngSwitchCase="6">six</p>
+    <p *ngSwitchCase="7">seven</p>
+    <p *ngSwitchCase="8">eight</p>
+    <p *ngSwitchCase="9">nine</p>
+    <p *ngSwitcDefault>default</p>
+  </div>
 <app-blog-list></app-blog-list>
 </div>

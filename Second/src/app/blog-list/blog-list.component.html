@@ -3,5 +3,11 @@
   <input type="text" placeholder="post" [(ngModel)]='post'/>
   <input type="text" placeholder="autchor" [(ngModel)]='author'/>
   <button type="button" class="btn btn-danger" (click)="addPost()">Danger</button>
-  <app-blog-item *ngFor="let item of postArray.reverse()" [post]="item"></app-blog-item>  
+  <app-blog-item *ngFor="let item of postArray.reverse()" [post]="item">
+    <div class="alert alert-danger" (click)="deletePost(item)">Post add {{item.title}}</div>
+  </app-blog-item>  
+  <input type="text" #Blogtitle placeholder="sometext">
+  <button (click)="addPostt(Blogtitle)">ok</button> <br>
+  <input type="text" #BlogPostRef placeholder="blogpost">
+  <button (click)="addPosttt()">ok</button>
 </p>

@@ -1,0 +1,20 @@
+.valera{
+    background-color: orange;
+    font-size: 45px;
+    width: 400px;
+    cursor: pointer;
+    margin-left: 38%;
+}
+.valera:hover{
+    box-shadow: 5px 5px 10px black;
+}
+.valera2{
+    background-color: blueviolet;
+    font-size: 45px;
+    width: 400px;
+    cursor: pointer;
+    margin-left: 38%;
+}
+.valera2:hover{
+    box-shadow: 5px 5px 10px red;
+}

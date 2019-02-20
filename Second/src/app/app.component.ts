@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'React';
+  active = 1;
+  arr=[1,2,3,4,5,7,8,9];
+  onClick(item:number){
+    console.log(item);
+    this.active=item;
+  }
 }
