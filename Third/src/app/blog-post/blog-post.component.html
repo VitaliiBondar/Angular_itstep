@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="container">
+      <p>
+          {{post.id}}
+        </p>
+    <p>
+      {{post.title}}
+    </p>
+    <p>
+      {{post.author}}
+    </p>
+    <p>
+      {{post.post}}
+    </p>
+    <a [routerLink]="['/blog', post.id]">show</a>
+    <hr>
+  </div>
+</div>

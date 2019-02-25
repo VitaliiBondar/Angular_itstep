@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="container">
+    <p>
+      Blog
+    </p>
+  </div>
+  <hr>
+  <hr>
+  <hr>
+</div>
+<app-blog-post *ngFor="let item of items" [post]="item">
+  <p>{{item.author}}</p>
+</app-blog-post>
