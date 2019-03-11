@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import "rxjs/add/operator/map";
 
 
@@ -8,11 +8,17 @@ import "rxjs/add/operator/map";
 })
 
 export class RequestServise {
-    url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
+    url = "https://weather2-72535.firebaseio.com/blog.json";
     url2="http://api.openweathermap.org/data/2.5/weather?q=London&appid=558389224c7b46b0434be8ef3129403b"
-    constructor(public request: HttpClient) {
+    
+    constructor(private HTTP: HttpClient) {
     }
-    getDate() {
-        return this.request.get(this.url2).map((response: Response) => { return response })
+    saveDate(Data:any[]) {
+        const headers = new HttpHeaders({'Content-Type' : 'application/json'});
+        return this.HTTP.post(this.url,Data,{headers:headers})
+    }
+    getData(){
+        console.log('ok');
+        return this.HTTP.get(this.url).map((response:Response)=> {return response});
     }
 }

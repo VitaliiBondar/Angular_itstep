@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestServise } from './request.servise';
+import { DbServise } from './db.servise';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,31 @@ import { RequestServise } from './request.servise';
 })
 export class AppComponent implements OnInit{
   title = 'Third';
-  constructor(public request : RequestServise){
+  constructor(private request : RequestServise, public dbservise : DbServise){
   }
-  arr={};
+  arr=[{
+    name:'John',
+    surname:'Johnson'
+  }];
   ngOnInit(){
-      this.request.getDate().subscribe((response:any)=>{
-      console.log(response);
-      this.arr=response;
-      console.log(this.arr);
-    })
+    //   this.request.getDate().subscribe((response:any)=>{
+    //   console.log(response);
+    //   this.arr=response;
+    //   console.log(this.arr);
+    // })
+  }
+  onSaveDb(){
+    this.request.saveDate(this.arr).subscribe(
+      (response)=>console.log(response),
+      (error)=>console.log(error)
+    )
+    let Arra=[];
+    // console.log(this.request.getData());
+    this.request.getData().subscribe(
+      (response)=>console.log(JSON.stringify(response),'dsdsds',Object.keys( response )[0]),
+    //   Arra.push(response);
+    // console.log(Arra[0]);},
+      (error)=>console.log(error)
+    )
   }
 }
