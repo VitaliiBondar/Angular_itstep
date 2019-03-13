@@ -10,6 +10,7 @@
     <!-- <h1>REACT is cool</h1> -->
     <!-- <div>{{arr.name}} temp - {{arr.main.temp -273}} {{arr.weather[0].main}}</div> -->
     <button (click)='onSaveDb()'>save</button>
+    <p *ngFor="let item of post">{{item}} <button>delete</button></p>
   </div>
 </div>
 

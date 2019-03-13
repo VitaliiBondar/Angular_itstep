@@ -5,10 +5,11 @@ import { DbServise } from './db.servise';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],  
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit{
   title = 'Third';
+  post=[];
   constructor(private request : RequestServise, public dbservise : DbServise){
   }
   arr=[{
@@ -26,14 +27,13 @@ export class AppComponent implements OnInit{
     this.request.saveDate(this.arr).subscribe(
       (response)=>console.log(response),
       (error)=>console.log(error)
-    )
+    );
     let Arra=[];
     // console.log(this.request.getData());
     this.request.getData().subscribe(
-      (response)=>console.log(JSON.stringify(response),'dsdsds',Object.keys( response )[0]),
-    //   Arra.push(response);
-    // console.log(Arra[0]);},
+      (response)=>Object.values(response).map(i=>this.post.push(i[0].name)),
       (error)=>console.log(error)
-    )
+    );
+    // console.log(this.post);
   }
 }
